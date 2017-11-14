@@ -7,7 +7,13 @@
     <% @category.businesses.each do |business| %>
       <li>
         <%= business.name %>
+        <%= business.website %>
+        <%= business.phone_number %>
       </li>
+      <%= link_to 'Edit', edit_category_business_path(@category, business) %> |
+      <%= link_to 'Delete', category_business_path(@category, business),
+                            :data => {:confirm => 'Are you Sure',
+                              :method => 'delete'} %>
     <% end %>
   </ul>
 <% else %>
