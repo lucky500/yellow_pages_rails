@@ -1,0 +1,5 @@
+<%= render('layouts/errors', :object => @business) %>
+  <%= form_for [@category, @business] do |f| %>
+    <%= f.label :name %>
+    <p><%= f.submit %></p>
+<% end %>
